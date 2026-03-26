@@ -235,7 +235,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
 	    // 헤더 설정 (SECRET_KEY 인증 방식)
 	    HttpHeaders headers = new HttpHeaders();
-	    headers.set("Authorization", "SECRET_KEY " + "DEV9413D1C4BDA552835C1053A44214BD88A6744"); // 실제_SECRET_KEY_DEV 넣어야함
+	    headers.set("Authorization", "SECRET_KEY " + System.getenv("KAKAO_PAY_SECRET_KEY")); 
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 
 	    // 바디 설정 (HashMap/JSON 방식)
